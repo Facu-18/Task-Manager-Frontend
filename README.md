@@ -38,7 +38,7 @@ npm start
 Frontend
 Clona el repositorio del frontend:
 
-git clone https://github.com/tuusuario/task-manager-frontend.git
+git clone https://github.com/Facu-18/task-manager-frontend.git
 cd task-manager-frontend
 Instala las dependencias:
 
@@ -64,7 +64,7 @@ El frontend está configurado para trabajar con el backend a través de la URL p
 Características
 Gestión de tareas: Los usuarios pueden crear, editar, eliminar y marcar tareas como completadas.
 Autenticación: Utiliza JWT para la autenticación de usuarios.
-Documentación de API: Accede a la documentación Swagger en https://task-manager-backend-msqj.onrender.com/api-docs/.
+Documentación de API: Accede a la documentación Swagger en https://task-manager-backend-msqj.onrender.com/api-docs.
 Tecnologías utilizadas
 Frontend: React, Vite, Tailwind CSS, Redux
 Backend: Node.js, Express, MongoDB, JWT, Swagger
