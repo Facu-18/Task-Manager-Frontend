@@ -1,50 +1,72 @@
-# React + TypeScript + Vite
+# Task Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una aplicación para gestionar tareas, donde los usuarios pueden crear, actualizar, eliminar y marcar tareas como completadas.
 
-Currently, two official plugins are available:
+## Enlace a la aplicación desplegada
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend**: [https://taskmanager-frontend.up.railway.app](https://taskmanager-frontend.up.railway.app)  
+- **Backend**: [https://taskmanager-backend-msqj.onrender.com](https://taskmanager-backend-msqj.onrender.com)
 
-## Expanding the ESLint configuration
+## Repositorios en GitHub
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. **Frontend**: [https://github.com/tuusuario/task-manager-frontend](https://github.com/tuusuario/task-manager-frontend)
+2. **Backend**: [https://github.com/tuusuario/task-manager-backend](https://github.com/tuusuario/task-manager-backend)
 
-- Configure the top-level `parserOptions` property like this:
+## Pasos para instalar y ejecutar el proyecto localmente
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Backend
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. Clona el repositorio del backend:
+   ```bash
+   git clone https://github.com/tuusuario/task-manager-backend.git
+   cd task-manager-backend
+2.Instala las dependencias:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+npm install
+Crea un archivo .env en la raíz del proyecto y agrega las siguientes variables de entorno (reemplazando con tus valores):
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+MONGO_URI=tu_conexion_mongodb
+PORT=3000
+JWT_SECRET=tu_clave_secreta
+FRONTEND_URL=http://localhost:5173
+SWAGGER_URL=http://localhost:3000/api
+Inicia el servidor:
+
+
+npm start
+Frontend
+Clona el repositorio del frontend:
+
+git clone https://github.com/tuusuario/task-manager-frontend.git
+cd task-manager-frontend
+Instala las dependencias:
+
+npm install
+Inicia la aplicación:
+
+
+npm run dev
+El frontend estará disponible en http://localhost:5173 por defecto.
+
+Detalles de configuración (Variables de entorno)
+Backend
+En el archivo .env del backend, asegúrate de agregar las siguientes variables:
+
+MONGO_URI: La URL de conexión a tu base de datos MongoDB.
+PORT: El puerto en el que corre tu servidor (por defecto es 3000).
+JWT_SECRET: Una clave secreta para la creación y validación de JWT.
+FRONTEND_URL: La URL de tu frontend (si estás trabajando localmente, puede ser http://localhost:5173).
+SWAGGER_URL: La URL para acceder a la documentación Swagger (por defecto es http://localhost:3000/api).
+Frontend
+El frontend está configurado para trabajar con el backend a través de la URL proporcionada en las variables de entorno del backend. Asegúrate de que las configuraciones de API sean correctas en tu código.
+
+Características
+Gestión de tareas: Los usuarios pueden crear, editar, eliminar y marcar tareas como completadas.
+Autenticación: Utiliza JWT para la autenticación de usuarios.
+Documentación de API: Accede a la documentación Swagger en https://task-manager-backend-msqj.onrender.com/api-docs/.
+Tecnologías utilizadas
+Frontend: React, Vite, Tailwind CSS, Redux
+Backend: Node.js, Express, MongoDB, JWT, Swagger
+Despliegue:
+Render Backend
+Netlify: Frontend
